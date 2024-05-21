@@ -1,0 +1,14 @@
+const express = require ('express')
+require ('./Database/connection')
+const router = require('./Routers/routeNotes')
+
+
+const app = express()
+const port = process.env.PORT || 4000
+
+app.use(express.json())
+app.use(router)
+
+app.listen(port,()=>{
+    console.log(`connection is live at port no. ${port}`);
+})
