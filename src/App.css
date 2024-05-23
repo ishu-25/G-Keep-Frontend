@@ -147,15 +147,6 @@ form button {
   color: #5f6368;
 }
 
-/* .search input{
-  width: 100%;
-  border: none;
-  padding: 4px 10px;
-  outline: none;
-  font-size: 0.9rem;
-  resize: none;
-} */
-
 .search-filter{
   position: relative;
   display: flex;
