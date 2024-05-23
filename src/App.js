@@ -17,7 +17,7 @@ function App() {
 
 
   useEffect(() => {
-    axios.get('https://70b2e717f73dc388aad65ede3723c2c4.serveo.net/Gkeep-notes')
+    axios.get('https://70b2e717f73dc388aad65ede3723c2c4.serveo.net/gkeep-notes')
     .then(response => {
       setNotes(response.data);
       setFilteredNotes(response.data); 
@@ -32,7 +32,7 @@ function App() {
     const formattedTime = currentDate.format("h:mm a");
 
     newNote = { ...newNote, date: formattedDate, time: formattedTime };
-      axios.post('https://70b2e717f73dc388aad65ede3723c2c4.serveo.net/Gkeep-notes', newNote, {
+      axios.post('https://70b2e717f73dc388aad65ede3723c2c4.serveo.net/gkeep-notes', newNote, {
     headers: { 'Content-Type': 'application/json' }
   })
     .then(response => {
@@ -48,7 +48,7 @@ function App() {
   }
 
   function deleteNotes(id) {
-    axios.delete(`https://70b2e717f73dc388aad65ede3723c2c4.serveo.net/Gkeep-notes/${id}`)
+    axios.delete(`https://70b2e717f73dc388aad65ede3723c2c4.serveo.net/gkeep-notes/${id}`)
     .then(response => {
       // console.log('Delete response:', response); 
       setNotes(prevValue => {
@@ -61,7 +61,7 @@ function App() {
   }
 
   function editHandler(id, updatedTitle, updatedContent) {
-      axios.patch(`https://70b2e717f73dc388aad65ede3723c2c4.serveo.net/Gkeep-notes/${id}`, {
+      axios.patch(`https://70b2e717f73dc388aad65ede3723c2c4.serveo.net/gkeep-notes/${id}`, {
     title: updatedTitle,
     content: updatedContent
   }, {
